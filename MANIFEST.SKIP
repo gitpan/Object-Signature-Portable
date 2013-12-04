@@ -1,0 +1,13 @@
+.*~$
+.*\.(bak|old)$
+\.git/.*
+\.gitignore
+
+^Makefile$
+^MYMETA.*
+
+^blib/
+^pm_to_blib$
+
+Object-Signature-Portable-.*\.tar\.gz
+
