@@ -9,7 +9,6 @@ build_requires:
   Test::Warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.59
-  Module::Install: 0
 distribution_type: module
 dynamic_config: 1
 generated_by: 'Module::Install version 1.06'
@@ -31,4 +30,4 @@ requires:
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
   repository: git://github.com/robrwo/Object-Signature-Portable.git
-version: 0.001000
+version: 0.001001

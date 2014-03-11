@@ -1,5 +1,15 @@
 Revision history for perl distirubton Object-Signature-Portable
 
+v0.1.1  2014-03-11
+  [Documentation]
+  - Added subsections to the LIMITATIONS section about Portability and
+    Security, and moved a note about the hash algorithm to the latter.
+
+  - Removed details from README.
+
+  [Other Changes]
+  - Removed unnecessary dependency from Makefile.PL.
+
 v0.1.0  2013-12-04
 
   - First release.

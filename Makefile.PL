@@ -20,9 +20,7 @@ resources (
 #   bugtracker => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Object-Signature-Portable',
 );
 
-configure_requires (
-   'Module::Install' => 0,
-);
+configure_requires ();
 
 build_requires (
 );
