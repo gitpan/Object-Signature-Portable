@@ -1,6 +1,14 @@
 NAME
     Object::Signature::Portable - generate portable signatures of objects
 
+REQUIREMENTS
+    This module requires Perl v5.10 or newer, and the following non-core
+    modules:
+
+    Crypt::Digest
+    Exporter::Lite
+    JSON::MaybeXS
+
 SYNOPSIS
         use Object::Signature::Portable;
 
@@ -43,7 +51,7 @@ SEE ALSO
         across different versions.)
 
 AUTHOR
-    Robert Rothenberg <rrwo@cpan.org> (on behalf of Foxtons, Ltd.)
+    Robert Rothenberg `<rrwo@cpan.org>' (on behalf of Foxtons, Ltd.)
 
 LICENSE AND COPYRIGHT
     Copyright 2013-2014 Robert Rothenberg.
