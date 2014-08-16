@@ -14,3 +14,7 @@ Object-Signature-Portable-.*\.tar\.gz
 # QA tests not needed in distribution
 
 ^xt/
+
+# Travis CI
+
+^\.travis\.yml$

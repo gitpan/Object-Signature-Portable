@@ -6,7 +6,7 @@ use inc::Module::Install;
 name     'Object-Signature-Portable';
 all_from 'lib/Object/Signature/Portable.pm';
 author   q{Robert Rothenberg <rrwo@cpan.org>};
-license  'artistic2';
+license  'artistic_2';
 
 perl_version 5.010;
 
