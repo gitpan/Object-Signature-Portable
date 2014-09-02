@@ -8,7 +8,7 @@ use Crypt::Digest;
 use Exporter::Lite;
 use JSON::MaybeXS;
 
-use version 0.77; our $VERSION = version->declare('v0.1.3');
+use version 0.77; our $VERSION = version->declare('v0.1.4');
 
 our @EXPORT = qw/ signature /;
 our @EXPORT_OK = @EXPORT;
@@ -133,6 +133,8 @@ a single argument, and returns the serialized data to be hashed.
 It is recommended that you use a serializer that produces canonical
 (normalized) output, and preferably one that produces consistent
 output across all of the platforms that you are using.
+(L<YAML>, L<Data::Dumper> or L<Sereal::Encoder> should be acceptable
+alternatives.)
 
 By default, it uses L<JSON::MaybeXS>. See L</LIMITATIONS> below.
 
@@ -282,6 +284,11 @@ signatures.
 =head1 AUTHOR
 
 Robert Rothenberg C<< <rrwo@cpan.org> >> (on behalf of Foxtons, Ltd.)
+
+=head2 Acknowledgements
+
+Thanks to various people at YAPC::EU 2014 for suggestions about
+L<Sereal::Encoder>.
 
 =head1 LICENSE AND COPYRIGHT
 

@@ -53,6 +53,10 @@ SEE ALSO
 AUTHOR
     Robert Rothenberg `<rrwo@cpan.org>' (on behalf of Foxtons, Ltd.)
 
+  Acknowledgements
+    Thanks to various people at YAPC::EU 2014 for suggestions about
+    Sereal::Encoder.
+
 LICENSE AND COPYRIGHT
     Copyright 2013-2014 Robert Rothenberg.
 

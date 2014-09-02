@@ -1,5 +1,9 @@
 Revision history for perl distribution Object-Signature-Portable
 
+v0.1.4  2014-09-02
+  [Documentation]
+  - Added note about alternative encoders.
+
 v0.1.3  2014-08-16
   [Documentation]
   - Fixed typos in Changes.
@@ -29,4 +33,3 @@ v0.1.1  2014-03-11
 v0.1.0  2013-12-04
 
   - First release.
-
