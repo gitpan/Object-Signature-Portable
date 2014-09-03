@@ -5,6 +5,7 @@ author:
   - 'Robert Rothenberg <rrwo@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.59
+  Test::Differences: 0
   Test::Most: 0
   Test::Warnings: 0
 configure_requires:
@@ -31,4 +32,4 @@ requires:
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
   repository: git://github.com/robrwo/Object-Signature-Portable.git
-version: 0.001004
+version: 0.001005

@@ -8,9 +8,9 @@ use Crypt::Digest;
 use Exporter::Lite;
 use JSON::MaybeXS;
 
-use version 0.77; our $VERSION = version->declare('v0.1.4');
+use version 0.77; our $VERSION = version->declare('v0.1.5');
 
-our @EXPORT = qw/ signature /;
+our @EXPORT    = qw/ signature /;
 our @EXPORT_OK = @EXPORT;
 
 =head1 NAME
@@ -145,7 +145,7 @@ By default, it uses L<JSON::MaybeXS>. See L</LIMITATIONS> below.
 sub signature {
     my %args;
 
-    if (scalar(@_) <= 1) {
+    if ( scalar(@_) <= 1 ) {
         $args{data} = $_[0];
     } else {
         %args = @_;
@@ -154,26 +154,25 @@ sub signature {
     $args{digest} //= 'MD5';
 
     $args{format} //= 'hexdigest';
-    unless ($args{format} =~ m/^(?:hex|b64u?)digest$/) {
-        croak sprintf('Invalid digest format: %s', $args{format});
+    unless ( $args{format} =~ m/^(?:hex|b64u?)digest$/ ) {
+        croak sprintf( 'Invalid digest format: %s', $args{format} );
     }
 
     $args{serializer} //= sub {
-        return
-            JSON->new->canonical(1)->allow_nonref(1)->utf8(1)
-            ->pretty(0)->indent(0)->space_before(0)->space_after(0)
-            ->allow_blessed(1)->convert_blessed(1)
-            ->encode( $_[0] );
+        return JSON->new->canonical(1)->allow_nonref(1)->utf8(1)->pretty(0)
+            ->indent(0)->space_before(0)->space_after(0)->allow_blessed(1)
+            ->convert_blessed(1)->encode( $_[0] );
     };
 
     my $digest = Crypt::Digest->new( $args{digest} );
-    $digest->add( &{$args{serializer}}( $args{data} ) );
+    $digest->add( &{ $args{serializer} }( $args{data} ) );
 
-    if (my $method = $digest->can($args{format})) {
-        my $prefix = $args{prefix} ? ($args{digest} . ':') : '';
+    if ( my $method = $digest->can( $args{format} ) ) {
+        my $prefix = $args{prefix} ? ( $args{digest} . ':' ) : '';
         return $prefix . $digest->$method;
     } else {
-        croak sprintf('Unexpected error with digest format: %s', $args{format});
+        croak sprintf( 'Unexpected error with digest format: %s',
+            $args{format} );
     }
 }
 

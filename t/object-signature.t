@@ -1,5 +1,5 @@
 use Test::Most;
-use Test::Warnings;
+use if $ENV{AUTHOR_TESTING} || $ENV{RELEASE_TESTING}, 'Test::Warnings';
 
 BEGIN {
     eval "use Object::Signature;";
@@ -12,14 +12,13 @@ use_ok('Object::Signature::Portable');
 
 sub serializer {
     local $Storable::canonical = 1;
-    return Storable::nfreeze($_[0]);
+    return Storable::nfreeze( $_[0] );
 }
 
 my $data = { abc => 123, foo => [qw/ bar baz /] };
 
 is signature( serializer => \&serializer, data => $data ),
-  Object::Signature::signature( $data ),
+    Object::Signature::signature($data),
     'same as Object::Signature';
-
 
 done_testing;

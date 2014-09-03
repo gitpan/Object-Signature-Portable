@@ -1,5 +1,15 @@
 Revision history for perl distribution Object-Signature-Portable
 
+v0.1.5  2014-09-03
+  [Tests]
+  - Tests require Test::Differences, since some CPAN::Testers
+    environments seem to be installing Test::Most without it.
+
+  - Test::Warnings is only used for author tests.
+
+  [Other Changes]
+  - Fixed MANIFEST.SKIP rules.
+
 v0.1.4  2014-09-02
   [Documentation]
   - Added note about alternative encoders.
