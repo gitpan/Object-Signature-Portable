@@ -1,5 +1,19 @@
 Revision history for perl distribution Object-Signature-Portable
 
+v0.1.6  2014-09-14
+  [Documentation]
+  - Added more details about alternative encoders.
+
+  - Added design considerations for choosing JSON as a default
+    serializer.
+
+  - Added a note to the POD that this is for fingerprinting an object,
+    and not for public-key signatures. (Thanks to the easily confused
+    and pedantic anonymous commenter.)
+
+  [Other Changes]
+  - Explicit minimum Perl version in module code.
+
 v0.1.5  2014-09-03
   [Tests]
   - Tests require Test::Differences, since some CPAN::Testers

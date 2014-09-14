@@ -1,5 +1,5 @@
 NAME
-    Object::Signature::Portable - generate portable signatures of objects
+    Object::Signature::Portable - generate portable fingerprints of objects
 
 REQUIREMENTS
     This module requires Perl v5.10 or newer, and the following non-core
@@ -21,8 +21,9 @@ SYNOPSIS
         );
 
 DESCRIPTION
-    This module provides a simple function for generating *portable*
-    cryptographic signatures of Perl data structures.
+    This module provides a simple function for generating *portable* digital
+    fingerprints (a.k.a. signatures, not to be confiused with public key
+    signatures.) of Perl data structures.
 
     The object is serialized into a canonical JSON structure, and then
     hashed using the MD5 algorithm.

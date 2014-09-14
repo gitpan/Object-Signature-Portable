@@ -37,6 +37,7 @@ test_requires(
     'Test::Differences' => 0,    # seems to be required for some cpantesters
     'Test::Most'        => 0,
     'Test::Warnings'    => 0,
+    'if'                => 0,
 );
 
 install_as_cpan;

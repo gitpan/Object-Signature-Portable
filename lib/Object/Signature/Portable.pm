@@ -1,5 +1,7 @@
 package Object::Signature::Portable;
 
+use v5.10;
+
 use strict;
 use warnings;
 
@@ -8,14 +10,14 @@ use Crypt::Digest;
 use Exporter::Lite;
 use JSON::MaybeXS;
 
-use version 0.77; our $VERSION = version->declare('v0.1.5');
+use version 0.77; our $VERSION = version->declare('v0.1.6');
 
 our @EXPORT    = qw/ signature /;
 our @EXPORT_OK = @EXPORT;
 
 =head1 NAME
 
-Object::Signature::Portable - generate portable signatures of objects
+Object::Signature::Portable - generate portable fingerprints of objects
 
 =begin readme
 
@@ -51,7 +53,8 @@ modules:
 =head1 DESCRIPTION
 
 This module provides a simple function for generating I<portable>
-cryptographic signatures of Perl data structures.
+digital fingerprints (a.k.a. signatures, not to be confiused with
+public key signatures.) of Perl data structures.
 
 The object is serialized into a canonical JSON structure, and then
 hashed using the MD5 algorithm.
@@ -81,7 +84,7 @@ can be customized, as needed.
     serializer => sub { ... },
   );
 
-Generate a cryptographic signature of the C<$data>.
+Generate a digital fingerprint of the C<$data>.
 
 The following options are supported:
 
@@ -132,11 +135,26 @@ a single argument, and returns the serialized data to be hashed.
 
 It is recommended that you use a serializer that produces canonical
 (normalized) output, and preferably one that produces consistent
-output across all of the platforms that you are using.
-(L<YAML>, L<Data::Dumper> or L<Sereal::Encoder> should be acceptable
-alternatives.)
+output across all of the platforms that you are using.  (L<YAML>,
+L<Data::Dumper> or L<Sereal::Encoder> should be acceptable
+alternatives, provided that you enable canonical encoding, and in the
+case of Sereal, explicitly specify a protocol version.)
 
-By default, it uses L<JSON::MaybeXS>. See L</LIMITATIONS> below.
+By default, it uses L<JSON::MaybeXS>. The choice for using JSON is
+based on the following considerations:
+
+=over
+
+=item JSON is a simple, text-based format. The output is not likely to
+change between module versions.
+
+=item Classes can be extended with hooks for JSON serialization.
+
+=item Speed is not a factor.
+
+=back
+
+However, see L</LIMITATIONS> below.
 
 =back
 
